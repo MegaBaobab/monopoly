@@ -9,5 +9,5 @@
  * @author mariobap
  */
 public class NewClass {
-    //RIP DFG
+    //RIP DFG :'(
 }
