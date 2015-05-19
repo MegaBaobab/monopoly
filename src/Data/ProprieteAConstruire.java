@@ -2,7 +2,7 @@ package Data;
 
 
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 
 
@@ -11,6 +11,6 @@ public class ProprieteAConstruire extends CarreauPropriete {
     
 	private int nbMaisons = 0;
 	private int nbHotels = 0;
-	private HashMap<Integer,Integer> loyerMaison;
+	private ArrayList<Integer> loyerMaison;
 	private Groupe groupePropriete;
 }
