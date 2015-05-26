@@ -7,4 +7,13 @@ public class Groupe {
 	private int prixAchatHotel;
 	private CouleurPropriete couleur;
 	private ArrayList<ProprieteAConstruire> proprietes = new ArrayList<ProprieteAConstruire>();
+
+    public Groupe(int prixAchatMaison, int prixAchatHotel, CouleurPropriete couleur) {
+        this.prixAchatMaison = prixAchatMaison;
+        this.prixAchatHotel = prixAchatHotel;
+        this.couleur = couleur;
+    }
+
+    
+
 }

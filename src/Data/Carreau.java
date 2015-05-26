@@ -16,4 +16,11 @@ public abstract class Carreau {
 	public int getnb() {
 		throw new UnsupportedOperationException();
 	}
+
+    public Carreau(int numero, String nomCarreau, Monopoly monopoly) {
+        this.numero = numero;
+        this.nomCarreau = nomCarreau;
+        this.monopoly = monopoly;
+    }
+        
 }
