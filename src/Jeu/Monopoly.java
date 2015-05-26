@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class Monopoly {
     
     /* Attributs */
-    private HashMap<Integer,Carreau> carreaux;
+    private ArrayList<Carreau> carreaux;
 
     /* Builder */
         
@@ -29,11 +29,22 @@ public class Monopoly {
 			ArrayList<String[]> data = readDataFile(dataFilename, ",");
 			
 			//TODO: create cases instead of displaying
+                        
+                        Groupe gbf= new Groupe(200,200,CouleurPropriete.bleuFonce);
+                        Groupe go= new Groupe(100,100,CouleurPropriete.orange);
+                        Groupe gm= new Groupe(50,50,CouleurPropriete.mauve);
+                        Groupe gvi= new Groupe(100,100,CouleurPropriete.violet);
+                        Groupe gbc= new Groupe(50,50,CouleurPropriete.bleuCiel);
+                        Groupe gj= new Groupe(150,150,CouleurPropriete.jaune);
+                        Groupe gve= new Groupe(200,200,CouleurPropriete.vert);
+                        Groupe gr= new Groupe(150,150,CouleurPropriete.rouge);
+                        
+                        
 			for(int i=0; i<data.size(); ++i){
 				String caseType = data.get(i)[0];
 				if(caseType.compareTo("P") == 0){
 					System.out.println("Propriété :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
-                                        
+                                        carreaux.add(new ProprieteAConstruire(null, null, i, i, null, i, caseType, null));
 				}
 				else if(caseType.compareTo("G") == 0){
 					System.out.println("Gare :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
