@@ -1,4 +1,4 @@
-package Data;
+package Jeu;
 
 public abstract class CarreauPropriete extends Carreau {
 	private int loyerBase;

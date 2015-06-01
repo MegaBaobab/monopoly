@@ -1,4 +1,4 @@
-package Data;
+package Jeu;
 
 public class CarreauTirage extends CarreauAction {
 
