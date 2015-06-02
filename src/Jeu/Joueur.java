@@ -74,8 +74,8 @@ public class Joueur {
         
 
 	public String getNom() {
-		throw new UnsupportedOperationException();
-	}
+            return this.nomJoueur;
+        }
 
     public Joueur(String nomJoueur, Monopoly monopoly) {
         this.nomJoueur = nomJoueur;
@@ -83,7 +83,7 @@ public class Joueur {
         compagnies = new ArrayList<Compagnie>();
         gares = new ArrayList<Gare>();
         proprietesAConstruire = new ArrayList<ProprieteAConstruire>();
-        positionCourante = null;
+        positionCourante = monopoly.getCarreau(1);
     }
         
         

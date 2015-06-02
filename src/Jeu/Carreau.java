@@ -5,18 +5,22 @@ public abstract class Carreau {
 	private String nomCarreau;
 	private Monopoly monopoly;
 
-	public int getNum() {
-		throw new UnsupportedOperationException();
-	}
+	
 
-	public void operation() {
-		throw new UnsupportedOperationException();
-	}
+    public int getNumero() {
+        return numero;
+    }
 
-	public int getnb() {
-		throw new UnsupportedOperationException();
-	}
+    public String getNomCarreau() {
+        return nomCarreau;
+    }
 
+    public Monopoly getMonopoly() {
+        return monopoly;
+    }
+
+        
+        
     public Carreau(int numero, String nomCarreau, Monopoly monopoly) {
         this.numero = numero;
         this.nomCarreau = nomCarreau;

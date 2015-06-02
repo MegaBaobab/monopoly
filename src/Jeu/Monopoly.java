@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.Scanner;
 
 
 
@@ -24,9 +25,9 @@ public class Monopoly {
         
 	public Monopoly(String dataFilename){
             carreaux = new ArrayList();
-            joueurs = new ArrayList<Joueur>();
+            joueurs = new ArrayList();
             groupes = new HashMap();
-            interface0 = new Interface();
+            interface0 = new Interface(this);
 		buildGamePlateau(dataFilename);
 	}
 
@@ -129,12 +130,37 @@ public class Monopoly {
             
             
         }
+
+    public ArrayList<Carreau> getCarreaux() {
+        return carreaux;
+    }
+
+    public int getNbMaisons() {
+        return nbMaisons;
+    }
+
+    public int getNbHotels() {
+        return nbHotels;
+    }
+
+    public ArrayList<Joueur> getJoueurs() {
+        return joueurs;
+    }
+
+    public Interface getInterface0() {
+        return interface0;
+    }
+
+    public HashMap<CouleurPropriete, Groupe> getGroupes() {
+        return groupes;
+    }
         
         
         
         public int des6(){
             Random r = new Random();
-            return r.nextInt(6)+1;
+            //return r.nextInt(6)+1;
+            return 2;
         }
         
         public Groupe getGroupe(CouleurPropriete c){
@@ -147,13 +173,26 @@ public class Monopoly {
         
         
         public void jouerUnCoup(Joueur j){
-            int d1 = des6();
-            int d2 = des6();
+            int d1 = 0;
+            int d2 = 0;
+            int i =0;
             
-            j.setPositionCourante(getCarreau(j.getPosition().getNum() + d1 + d2));
-            interface0.afficheDes(j,d1,d2);
-            interface0.afficheJoueur(j);
-            
+            while (d1==d2 && i<3){
+            d1 = des6();
+            d2 = des6();
+            i=i+1;
+                if(i==3){
+                    j.setPositionCourante(getCarreau(11)); // aller en prison
+                }else{
+                    j.setPositionCourante(getCarreau(j.getPosition().getNumero()+ d1 + d2));
+                }
+               interface0.afficheDes(j,d1,d2); 
+            }
+            for (Joueur jo : joueurs){
+            interface0.afficheJoueur(jo);
+            }
+            Scanner entree = new Scanner(System.in);
+            entree.nextLine();
         }
         
 }

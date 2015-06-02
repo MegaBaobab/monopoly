@@ -28,21 +28,25 @@ public class Interface {
             
             return i;
         }
+
+    public Interface(Monopoly monopoly) {
+        this.monopoly = monopoly;
+    }
         
         public void afficheDes(Joueur j, int d1, int d2){
-            System.out.print(j.getNom() + "lance les dés : " +d1 + d2);
+            int d = d1+d2;
+            System.out.println(j.getNom() + " lance les dés : " +d1 + "+" + d2 + " (" +d + ") et arrive sur la case " + j.getPositionCourante().getNomCarreau());
         }
         
         public void afficheJoueur(Joueur j){
+            System.out.println("-------------------------------------------------------------");
             System.out.println("Joueur : " + j.getNom());
-            System.out.println("Cash : " + j.getCash());
-            System.out.println("Position : " + j.getPositionCourante());
+            System.out.println("Cash : " + j.getCash() +"€");
+            System.out.println("Position : " + j.getPositionCourante().getNomCarreau());
             System.out.println("Propriété(s) : " + j.getProprietesAConstruire().size());
             System.out.println("Compagnie(s) : " + j.getCompagnies().size());
             System.out.println("Gare(s) : " + j.getGares().size());
-            
-            
-            
+            System.out.println("-------------------------------------------------------------");
         }
         
         
