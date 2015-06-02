@@ -26,6 +26,7 @@ public class Monopoly {
             carreaux = new ArrayList();
             joueurs = new ArrayList<Joueur>();
             groupes = new HashMap();
+            interface0 = new Interface();
 		buildGamePlateau(dataFilename);
 	}
 
@@ -114,7 +115,18 @@ public class Monopoly {
 	}
         
         
-        public void inscriptionJoueurs(){
+        public void initialiserPartie(){
+            int i = 0;
+            
+            while (i>6 || i<2) {
+            i = interface0.nbJoueur();
+            }
+            
+            for (int y=1; y<=i; y++){
+                String nom = interface0.saisieJoueur(y);
+                joueurs.add(new Joueur(nom, this));
+            }
+            
             
         }
         
@@ -122,14 +134,27 @@ public class Monopoly {
         
         public int des6(){
             Random r = new Random();
-            return (r.nextInt(6)+1) + (r.nextInt(6)+1);
+            return r.nextInt(6)+1;
         }
         
         public Groupe getGroupe(CouleurPropriete c){
             return groupes.get(c);
         }
         
+        public Carreau getCarreau(int i){
+            return carreaux.get(i -1);
+        }
         
+        
+        public void jouerUnCoup(Joueur j){
+            int d1 = des6();
+            int d2 = des6();
+            
+            j.setPositionCourante(getCarreau(j.getPosition().getNum() + d1 + d2));
+            interface0.afficheDes(j,d1,d2);
+            interface0.afficheJoueur(j);
+            
+        }
         
 }
 
