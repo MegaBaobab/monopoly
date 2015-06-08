@@ -51,21 +51,25 @@ public class Monopoly {
                                         for(int y=5; y<11; y++){
                                           a.add(Integer.parseInt(data.get(i)[y]));  
                                         }
-                                        
+                                        Groupe g;
                                         
                                         if(groupes.containsKey(CouleurPropriete.valueOf(data.get(i)[3]))){
-                                            carreaux.add(new ProprieteAConstruire(a, getGroupe(CouleurPropriete.valueOf(data.get(i)[3])),
-                                                    Integer.parseInt(data.get(i)[5]),
-                                                    null, Integer.parseInt(data.get(i)[1]),
-                                                    data.get(i)[2] , this));
+                                            g = getGroupe(CouleurPropriete.valueOf(data.get(i)[3]));
+                                            
                                         }
                                         else{
-                                            carreaux.add(new ProprieteAConstruire(a,
-                                                    new Groupe(Integer.parseInt(data.get(i)[11]),Integer.parseInt(data.get(i)[12]),CouleurPropriete.valueOf(data.get(i)[3])),
+                                            g = new Groupe(Integer.parseInt(data.get(i)[11]),Integer.parseInt(data.get(i)[12]),CouleurPropriete.valueOf(data.get(i)[3]));
+                                            
+                                            ajouterGroupe(g);
+                                        }
+                                        
+                                        ProprieteAConstruire p = new ProprieteAConstruire(a,
+                                                    g,
                                                     Integer.parseInt(data.get(i)[5]),
                                                     null, Integer.parseInt(data.get(i)[1]),
-                                                    data.get(i)[2] ,this));
-                                        }
+                                                    data.get(i)[2] ,this);
+                                            carreaux.add(p);
+                                            getGroupe(CouleurPropriete.valueOf(data.get(i)[3])).ajouterPropriete(p);
                                         
 				}
 				else if(caseType.compareTo("G") == 0){
@@ -155,12 +159,14 @@ public class Monopoly {
         return groupes;
     }
         
-        
+    public void ajouterGroupe(Groupe g){
+        groupes.put(g.getCouleur(),g);
+    }    
         
         public int des6(){
             Random r = new Random();
-            //return r.nextInt(6)+1;
-            return 2;
+            return r.nextInt(6)+1;
+            //return 2;
         }
         
         public Groupe getGroupe(CouleurPropriete c){
@@ -175,16 +181,44 @@ public class Monopoly {
         public void jouerUnCoup(Joueur j){
             int d1 = 0;
             int d2 = 0;
-            int i =0;
+            int i = 0;
+            int x  = 0;
             
             while (d1==d2 && i<3){
-            d1 = des6();
-            d2 = des6();
+            d1 = 10;
+            d2 = 0;
             i=i+1;
                 if(i==3){
-                    j.setPositionCourante(getCarreau(11)); // aller en prison
+                    allerEnPrison(j);
                 }else{
-                    j.setPositionCourante(getCarreau(j.getPosition().getNumero()+ d1 + d2));
+                    x = (j.getPosition().getNumero()+ d1 + d2);
+                    if(x > 40){
+                        x = x - 40;
+                        j.setCash(j.getCash() + 200);
+                    }
+                    
+                    if(j.getTourPrison()== 3 || j.getTourPrison() == 2){
+                        if(d1 == d2){
+                            j.setTourPrison(0);
+                        }
+                        else{
+                            j.setTourPrison(j.getTourPrison()-1);
+                        }
+                        
+                    }
+                    else if(j.getTourPrison() == 1){
+                        if(d1 == d2){
+                            j.setTourPrison(0);
+                        }
+                        else{
+                            j.setTourPrison(0);
+                            j.setCash(j.getCash()-50);
+                        }
+                    }
+                
+                    if(j.getTourPrison() == 0){
+                    j.setPositionCourante(getCarreau(x));
+                    }
                 }
                interface0.afficheDes(j,d1,d2); 
             }
@@ -193,6 +227,11 @@ public class Monopoly {
             }
             Scanner entree = new Scanner(System.in);
             entree.nextLine();
+        }
+        
+        public void allerEnPrison(Joueur j){
+            j.setPositionCourante(getCarreau(11));
+            j.setTourPrison(3);
         }
         
 }

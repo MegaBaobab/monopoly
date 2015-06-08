@@ -19,6 +19,21 @@ public class ProprieteAConstruire extends CarreauPropriete {
         this.loyerMaison = loyerMaison;
         this.groupePropriete = groupePropriete;
     }
+
+    @Override
+    public void action(Joueur j, int des) {
+        if(getProprietaire() == null){
+            if(j.getCash() >= getPrixAchat()){
+                if(getMonopoly().getInterface0().vente(j, getPrixAchat())){
+                    j.setCash(j.getCash() - getPrixAchat());
+                    setProprietaire(j);
+                    j.getProprietesAConstruire().add(this);
+                }
+                
+            }else getMonopoly().getInterface0().pauvre();
+        }
+    }
+
         
         
         

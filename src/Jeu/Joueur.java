@@ -10,6 +10,7 @@ public class Joueur {
 	private ArrayList<Gare> gares ;
 	private Carreau positionCourante;
 	private ArrayList<ProprieteAConstruire> proprietesAConstruire ;
+        private int tourPrison;
 
 	public Carreau getPosition() {
             return positionCourante;
@@ -70,6 +71,14 @@ public class Joueur {
     public void setProprietesAConstruire(ArrayList<ProprieteAConstruire> proprietesAConstruire) {
         this.proprietesAConstruire = proprietesAConstruire;
     }
+
+    public int getTourPrison() {
+        return tourPrison;
+    }
+
+    public void setTourPrison(int tourPrison) {
+        this.tourPrison = tourPrison;
+    }
         
         
 
@@ -84,6 +93,7 @@ public class Joueur {
         gares = new ArrayList<Gare>();
         proprietesAConstruire = new ArrayList<ProprieteAConstruire>();
         positionCourante = monopoly.getCarreau(1);
+        tourPrison = 0;
     }
         
         

@@ -39,17 +39,38 @@ public class Interface {
         }
         
         public void afficheJoueur(Joueur j){
+            j.setTourPrison(2);
             System.out.println("-------------------------------------------------------------");
             System.out.println("Joueur : " + j.getNom());
             System.out.println("Cash : " + j.getCash() +"€");
+            if(j.getPositionCourante().getNumero() != 11){
             System.out.println("Position : " + j.getPositionCourante().getNomCarreau());
+            }else if(j.getTourPrison()==0){
+                System.out.println("Position : \033[32mSimple Visite\033[0m / En Prison");
+            }else{
+                System.out.println("Position : Simple Visite / \033[31mEn Prison");
+            }
             System.out.println("Propriété(s) : " + j.getProprietesAConstruire().size());
             System.out.println("Compagnie(s) : " + j.getCompagnies().size());
             System.out.println("Gare(s) : " + j.getGares().size());
             System.out.println("-------------------------------------------------------------");
         }
         
+        public boolean vente(Joueur j, int prix){
+            System.out.println("Voulez vous acheter " + j.getPositionCourante().getNomCarreau() + " au prix de " + prix);
+            System.out.println("1-OUI  2-NON");
+            Scanner entree = new Scanner(System.in);
+            int i=entree.nextInt();
+            if(i==1){
+                return true;
+            }else {
+                return false;
+            }
+        }
         
+        public void pauvre(){
+            System.out.println("Désolé mais tu n'es pas assez riche pour acheter cette case.");
+        }
         
         
         

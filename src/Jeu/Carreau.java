@@ -26,5 +26,8 @@ public abstract class Carreau {
         this.nomCarreau = nomCarreau;
         this.monopoly = monopoly;
     }
-        
+    
+    public abstract void action(Joueur j, int des);   
+    
+    
 }
