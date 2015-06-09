@@ -42,24 +42,37 @@ P,40,Rue de la Paix,bleuFonce,400,50,200,600,1400,1700,2000,200,200
 
 
 
-CC,1,SP,Vous êtes libéré de prison. Cette carte peut être concervée jusqu'à ce qu'elle soit utilisée.
-CC,2,MR,Reculez de 3 cases.,3
-CC,3,R,Vous êtes imposés pour les réparations de voirie à raison de : 40€ par maisons et 115€ par hôtels.,40,115
-CC,4,A,Amende pour excès de vitesse : 15€.,-15
-CC,5,R,Faites des réparations dans toutes vos maisons: versez pour chaque maisons 25€ et pour chaque hotel 100€.,25,100
-CC,6,A,Amende pour ivresse : 20€.,-20
-CC,7,MA,Avancez jusqu'à la case Départ.,1
-CC,8,MA,Allez en prison. Avancez  tout droit en prison.Ne passez pas par la case Départ.Ne recevez pas 200€.,11
-CC,9,MA,Rendez-vous à l'avenue Henri-Martin. Si vous passez par la case Départ recevez 200€.,25
-CC,10,MA,Allez a la gare de Lyon.Si vous passez par la case Départ recevez 200€.,16
-CC,11,A,Payez pour frais de scolarité : 150€.,
-CC,12,A,Vous gagné le prix de mots croisés. Recevez 100€.,
-CC,13,A,La banque vous verse un dividende de 50 €.,
-CC,14,MA,Rendez-vous Rue de la Paix.,
-CC,15,A,Votre immeuble et votre prêt rapportent. Vous devez toucher 150€. ,
-CC,16,MA,Accedez au Boulevard de la Villette. Si vous passez par la case Départ recevez 200€.,
-
-
-
+CC,SP,Vous êtes libéré de prison. Cette carte peut être concervée jusqu'à ce qu'elle soit utilisée.
+CC,MR,Reculez de 3 cases.,3
+CC,R,Vous êtes imposés pour les réparations de voirie à raison de : 40€ par maisons et 115€ par hôtels.,40,115
+CC,A,Amende pour excès de vitesse : 15€.,-15
+CC,R,Faites des réparations dans toutes vos maisons: versez pour chaque maisons 25€ et pour chaque hotel 100€.,25,100
+CC,A,Amende pour ivresse : 20€.,-20
+CC,MA,Avancez jusqu'à la case Départ.,1
+CC,MA,Allez en prison. Avancez  tout droit en prison.Ne passez pas par la case Départ.Ne recevez pas 200€.,11
+CC,MA,Rendez-vous à l'avenue Henri-Martin. Si vous passez par la case Départ recevez 200€.,25
+CC,MA,Allez a la gare de Lyon.Si vous passez par la case Départ recevez 200€.,16
+CC,A,Payez pour frais de scolarité : 150€.,-150
+CC,A,Vous gagné le prix de mots croisés. Recevez 100€.,100
+CC,A,La banque vous verse un dividende de 50 €.,50
+CC,MA,Rendez-vous Rue de la Paix.,40
+CC,A,Votre immeuble et votre prêt rapportent. Vous devez toucher 150€. ,150
+CC,MA,Accedez au Boulevard de la Villette. Si vous passez par la case Départ recevez 200€.,2
+CCc,SP,Vous êtes libéré de prison. Cette carte peut être concervée jusqu'à ce qu'elle soit utilisée.
+CCc,A,Payez une amende de 10€.,-10
+CCC,AN,C'est votre anniversaire. Chaque joueur doit vous donner 10€. 
+CCC,A,Erreur de la banque en votre faveur. Recevez 200€.,200
+CCC,MA,Retournez à belleville.,2
+CCC,A,Payez la note du medcin: 50€.,-50
+CCC,A,Les contributions vous remboursent la somme de 20€.,20
+CCC,A,Payez à l'hôpital 100€.,-100
+CCC,A,Vous héritez: 100€.,100
+CCC,MA,Allez en prison. Avancez  tout droit en prison.Ne passez pas par la case Départ.Ne recevez pas 200€.,11
+CCC,A,Payez votre police d'assurance: 50€.,-50
+CCC,A,La vente de votre stock vous rapporte: 50€.,50
+CCC,MA,Avancez jusqu'à la case Départ.,1
+CCC,A,Recevez votre intérêt sur l'emprunt à 7%: 25€.,25
+CCC,A,Recevez votre revenue annuel: 100€.,100
+CCC,A,Vous gagné le deuxième prix de beauté: recevez 10€.,10
 
 
