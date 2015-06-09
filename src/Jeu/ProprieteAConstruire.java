@@ -34,6 +34,38 @@ public class ProprieteAConstruire extends CarreauPropriete {
         }
     }
 
+    public int getNbMaisons() {
+        return nbMaisons;
+    }
+
+    public void setNbMaisons(int nbMaisons) {
+        this.nbMaisons = nbMaisons;
+    }
+
+    public int getNbHotels() {
+        return nbHotels;
+    }
+
+    public void setNbHotels(int nbHotels) {
+        this.nbHotels = nbHotels;
+    }
+
+    public ArrayList<Integer> getLoyerMaison() {
+        return loyerMaison;
+    }
+
+    public void setLoyerMaison(ArrayList<Integer> loyerMaison) {
+        this.loyerMaison = loyerMaison;
+    }
+
+    public Groupe getGroupePropriete() {
+        return groupePropriete;
+    }
+
+    public void setGroupePropriete(Groupe groupePropriete) {
+        this.groupePropriete = groupePropriete;
+    }
+
         
         
         

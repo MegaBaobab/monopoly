@@ -95,6 +95,22 @@ public class Joueur {
         positionCourante = monopoly.getCarreau(1);
         tourPrison = 0;
     }
-        
-        
+      
+    public int nbMaisons(){
+        int nb = 0;
+        for(ProprieteAConstruire p : getProprietesAConstruire()){
+            nb = nb + p.getNbMaisons();
+        }
+        return nb;
+    }
+    
+    public int nbHotels(){
+        int nb = 0;
+        for(ProprieteAConstruire p : getProprietesAConstruire()){
+            nb = nb + p.getNbHotels();
+        }
+        return nb;
+    
+    }
 }
+        

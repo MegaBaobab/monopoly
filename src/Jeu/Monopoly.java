@@ -96,11 +96,40 @@ public class Monopoly {
 				else if(caseType.compareTo("CM") == 0){
 					System.out.println("Case Mouvement :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
                                         carreaux.add(new CarreauMouvement(Integer.parseInt(data.get(i)[1]), data.get(i)[2], this));
-				}else if(caseType.compareTo("CC") == 0){
+				}else if(caseType.compareTo("CC") == 0){ //carte chance
                                     
                                         if(data.get(i)[1].compareTo("SP") == 0){
-                                            cartesChances.add(new )
+                                            cartesChances.add(new CarteSortirPrison(data.get(i)[2], this));
                                         }
+                                        else if(data.get(i)[1].compareTo("MR") == 0){
+                                            cartesChances.add(new CarteMouvementRelatif(data.get(i)[2], Integer.parseInt(data.get(i)[3]), this));
+                                        }
+                                        else if(data.get(i)[1].compareTo("MA") == 0){
+                                            cartesChances.add(new CarteMouvementAbsolu(data.get(i)[2], getCarreau(Integer.parseInt(data.get(i)[3])), this));
+                                        }
+                                        else if(data.get(i)[1].compareTo("A") == 0){
+                                            cartesChances.add(new CarteArgent(data.get(i)[2], Integer.parseInt(data.get(i)[3]), this));
+                                        }
+                                        else if(data.get(i)[1].compareTo("R") == 0){
+                                            cartesChances.add(new CarteReparation(data.get(i)[2], Integer.parseInt(data.get(i)[4]), Integer.parseInt(data.get(i)[3]), this));
+                                        }
+                                    
+                                }
+                                else if(caseType.compareTo("CCC") == 0){ //carte Communauté
+                                    
+                                        if(data.get(i)[1].compareTo("SP") == 0){
+                                            cartesCommunaute.add(new CarteSortirPrison(data.get(i)[2], this));
+                                        }
+                                        else if(data.get(i)[1].compareTo("A") == 0){
+                                            cartesChances.add(new CarteArgent(data.get(i)[2], i, this));
+                                        }
+                                        else if(data.get(i)[1].compareTo("AN") == 0){
+                                            cartesChances.add(new CarteAnniversaire(data.get(i)[2], this));
+                                        }
+                                        else if(data.get(i)[1].compareTo("MA") == 0){
+                                            cartesChances.add(new CarteMouvementAbsolu(data.get(i)[2], getCarreau(Integer.parseInt(data.get(i)[3])), this));
+                                        }
+                                    
                                     
                                 }
 				else
