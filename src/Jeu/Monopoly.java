@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,8 +19,10 @@ public class Monopoly {
     private int nbMaisons = 32;
     private int nbHotels = 12;
     private ArrayList<Joueur> joueurs; 
-    public Interface interface0;
+    private Interface interface0;
     private HashMap<CouleurPropriete,Groupe> groupes;
+    private LinkedList cartesChances;
+    private LinkedList cartesCommunaute;
 
     /* Builder */
         
@@ -28,6 +31,8 @@ public class Monopoly {
             joueurs = new ArrayList();
             groupes = new HashMap();
             interface0 = new Interface(this);
+            cartesChances = new LinkedList();
+            cartesCommunaute = new LinkedList();
 		buildGamePlateau(dataFilename);
 	}
 
@@ -91,7 +96,13 @@ public class Monopoly {
 				else if(caseType.compareTo("CM") == 0){
 					System.out.println("Case Mouvement :\t" + data.get(i)[2] + "\t@ case " + data.get(i)[1]);
                                         carreaux.add(new CarreauMouvement(Integer.parseInt(data.get(i)[1]), data.get(i)[2], this));
-				}
+				}else if(caseType.compareTo("CC") == 0){
+                                    
+                                        if(data.get(i)[1].compareTo("SP") == 0){
+                                            cartesChances.add(new )
+                                        }
+                                    
+                                }
 				else
 					System.err.println("[buildGamePleateau()] : Invalid Data type");
 			}
