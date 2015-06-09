@@ -17,8 +17,8 @@ public class Monopoly {
     private ArrayList<Carreau> carreaux;
     private int nbMaisons = 32;
     private int nbHotels = 12;
-	private ArrayList<Joueur> joueurs; 
-	public Interface interface0;
+    private ArrayList<Joueur> joueurs; 
+    public Interface interface0;
     private HashMap<CouleurPropriete,Groupe> groupes;
 
     /* Builder */
@@ -185,8 +185,8 @@ public class Monopoly {
             int x  = 0;
             
             while (d1==d2 && i<3){
-            d1 = 10;
-            d2 = 0;
+            d1 = des6();
+            d2 = des6();
             i=i+1;
                 if(i==3){
                     allerEnPrison(j);

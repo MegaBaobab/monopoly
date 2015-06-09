@@ -38,3 +38,28 @@ CT,37,Chance
 P,38,Av. des Champs-Elysées,bleuFonce,350,35,175,500,1100,1300,1500,200,200
 CA,39,Taxe de Luxe,-100
 P,40,Rue de la Paix,bleuFonce,400,50,200,600,1400,1700,2000,200,200
+
+
+
+
+CC,1,SP,Vous êtes libéré de prison. Cette carte peut être concervée jusqu'à ce qu'elle soit utilisée.
+CC,2,MR,Reculez de 3 cases.,3
+CC,3,R,Vous êtes imposés pour les réparations de voirie à raison de : 40€ par maisons et 115€ par hôtels.,40,115
+CC,4,A,Amende pour excès de vitesse : 15€.,-15
+CC,5,R,Faites des réparations dans toutes vos maisons: versez pour chaque maisons 25€ et pour chaque hotel 100€.,25,100
+CC,6,A,Amende pour ivresse : 20€.,-20
+CC,7,MA,Avancez jusqu'à la case Départ.,1
+CC,8,MA,Allez en prison. Avancez  tout droit en prison.Ne passez pas par la case Départ.Ne recevez pas 200€.,11
+CC,9,MA,Rendez-vous à l'avenue Henri-Martin. Si vous passez par la case Départ recevez 200€.,25
+CC,10,MA,Allez a la gare de Lyon.Si vous passez par la case Départ recevez 200€.,16
+CC,11,A,Payez pour frais de scolarité : 150€.,
+CC,12,A,Vous gagné le prix de mots croisés. Recevez 100€.,
+CC,13,A,La banque vous verse un dividende de 50 €.,
+CC,14,MA,Rendez-vous Rue de la Paix.,
+CC,15,A,Votre immeuble et votre prêt rapportent. Vous devez toucher 150€. ,
+CC,16,MA,Accedez au Boulevard de la Villette. Si vous passez par la case Départ recevez 200€.,
+
+
+
+
+

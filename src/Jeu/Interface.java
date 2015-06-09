@@ -39,7 +39,6 @@ public class Interface {
         }
         
         public void afficheJoueur(Joueur j){
-            j.setTourPrison(2);
             System.out.println("-------------------------------------------------------------");
             System.out.println("Joueur : " + j.getNom());
             System.out.println("Cash : " + j.getCash() +"€");
