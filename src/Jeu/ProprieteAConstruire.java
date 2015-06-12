@@ -32,6 +32,12 @@ public class ProprieteAConstruire extends CarreauPropriete {
                 
             }else getMonopoly().getInterface0().pauvre();
         }
+        else if(getProprietaire() == j){
+            construire(j);
+        }
+        else{
+            getMonopoly().getInterface0().payer(this, j, des);
+        }
     }
 
     public int getNbMaisons() {
@@ -44,6 +50,10 @@ public class ProprieteAConstruire extends CarreauPropriete {
 
     public int getNbHotels() {
         return nbHotels;
+    }
+    
+    public Joueur getProprietaire(){
+        return super.getProprietaire();
     }
 
     public void setNbHotels(int nbHotels) {
@@ -65,8 +75,79 @@ public class ProprieteAConstruire extends CarreauPropriete {
     public void setGroupePropriete(Groupe groupePropriete) {
         this.groupePropriete = groupePropriete;
     }
+    
+   
+    
 
         
+    public int loyerProprieteAConstruire(Joueur j){
+               
+        if(getNbHotels() == 1){
+                j.setCash(j.getCash() - getLoyerMaison().get(5));
+                return getLoyerMaison().get(5);
+            }else {
+                j.setCash(j.getCash() - getLoyerMaison().get(nbMaisons));
+                return getLoyerMaison().get(nbMaisons);
+            }
         
+    }    
+    
+    public void construire(Joueur j){
+        if(proprioDuGroupe(j)){ 
+            boolean rep = true;
+            while(rep){
+            int moy = getGroupePropriete().getNbMaisonTotal()/getGroupePropriete().getProprietes().size();
+            if(moy == 4){
+                if(j.getCash() > getGroupePropriete().getPrixAchatHotel() && getMonopoly().getNbHotels() > 0){
+                rep = getMonopoly().getInterface0().construire(this,true);
+                if(rep){
+                j.setCash(j.getCash() - getGroupePropriete().getPrixAchatHotel());
+                    ArrayList<ProprieteAConstruire> temp = new ArrayList<>();
+                    for(ProprieteAConstruire p : getGroupePropriete().getProprietes()){
+                        if(p.getNbMaisons() == moy){
+                            temp.add(p);
+                        }
+                    }
+                    ProprieteAConstruire choix = getMonopoly().getInterface0().choixConstruction(temp);
+                    choix.setNbMaisons(choix.getNbMaisons() + 1);
+                }
+                    
+                }
+            }
+            else if(moy < 4) {
+                if(j.getCash() > getGroupePropriete().getPrixAchatMaison() && getMonopoly().getNbMaisons() > 0){
+                    rep = getMonopoly().getInterface0().construire(this,false);
+                    if(rep){
+                    j.setCash(j.getCash() - getGroupePropriete().getPrixAchatMaison());
+                    ArrayList<ProprieteAConstruire> temp = new ArrayList<>();
+                    for(ProprieteAConstruire p : getGroupePropriete().getProprietes()){
+                        if(p.getNbMaisons() == moy){
+                            temp.add(p);
+                        }
+                    }
+                    ProprieteAConstruire choix = getMonopoly().getInterface0().choixConstruction(temp);
+                    choix.setNbMaisons(choix.getNbMaisons() + 1);
+                    }
+                }   
+            }
+            else if(moy == 5){
+                getMonopoly().getInterface0().groupePlein(getGroupePropriete());
+            }
+            }
+            
+        }
+    }
         
+    
+    public boolean proprioDuGroupe(Joueur j){
+        int total = 0;
+        int oui = 0;
+        for(ProprieteAConstruire p : getGroupePropriete().getProprietes()){
+            if(p.getProprietaire() == j){
+                oui++;
+            }
+                total++;
+        }
+        return (total==oui);
+    }
 }

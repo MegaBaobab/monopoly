@@ -20,11 +20,14 @@ public class Gare extends CarreauPropriete {
                 
             }else getMonopoly().getInterface0().pauvre();
         }else {
-            j.setCash(j.getCash() - 25*getProprietaire().getGares().size());
-            getProprietaire().setCash(getProprietaire().getCash() + 25*getProprietaire().getGares().size());
+            getMonopoly().getInterface0().payer(this, j, des);
         }
     }
 
-    
+    public int loyerGare(Joueur j){
+        j.setCash(j.getCash() - 25*getProprietaire().getGares().size());
+        getProprietaire().setCash(getProprietaire().getCash() + 25*getProprietaire().getGares().size());
+        return 25*getProprietaire().getGares().size();
+    }
     
 }

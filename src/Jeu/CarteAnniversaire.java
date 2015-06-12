@@ -20,7 +20,7 @@ public class CarteAnniversaire extends Carte {
 
     @Override
     public void action(Joueur j) {
-        getMonopoly().getInterface0().anniversaire(j);
+        getMonopoly().getInterface0().afficheTirage(this);
         for(Joueur jo : getMonopoly().getJoueurs()){
             if( j != jo){
                 j.setCash(j.getCash() + 10);

@@ -11,11 +11,24 @@ public class Joueur {
 	private Carreau positionCourante;
 	private ArrayList<ProprieteAConstruire> proprietesAConstruire ;
         private int tourPrison;
+        private int nbCartessortiePrison;
+        
+        
+        public Joueur(String nomJoueur, Monopoly monopoly) {
+        setNomJoueur(nomJoueur);
+        setMonopoly(monopoly);
+        setCompagnies(new ArrayList<Compagnie>());
+        setGares(new ArrayList<Gare>());
+        setProprietesAConstruire(new ArrayList<ProprieteAConstruire>());
+        setPositionCourante(monopoly.getCarreau(1));
+        setTourPrison(0);
+        setNbCartessortiePrison(0);
+        
+    }
+        
+        
 
-	public Carreau getPosition() {
-            return positionCourante;
-        }
-
+	
     public void setPositionCourante(Carreau positionCourante) {
         this.positionCourante = positionCourante;
     }
@@ -79,22 +92,18 @@ public class Joueur {
     public void setTourPrison(int tourPrison) {
         this.tourPrison = tourPrison;
     }
-        
-        
 
-	public String getNom() {
-            return this.nomJoueur;
-        }
-
-    public Joueur(String nomJoueur, Monopoly monopoly) {
-        this.nomJoueur = nomJoueur;
-        this.monopoly = monopoly;
-        compagnies = new ArrayList<Compagnie>();
-        gares = new ArrayList<Gare>();
-        proprietesAConstruire = new ArrayList<ProprieteAConstruire>();
-        positionCourante = monopoly.getCarreau(1);
-        tourPrison = 0;
+    public int getNbCartessortiePrison() {
+        return nbCartessortiePrison;
     }
+
+    public void setNbCartessortiePrison(int nbCartessortiePrison) {
+        this.nbCartessortiePrison = nbCartessortiePrison;
+    }
+        
+        
+
+    
       
     public int nbMaisons(){
         int nb = 0;

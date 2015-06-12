@@ -33,6 +33,7 @@ public class CarteMouvementRelatif extends Carte {
 
     @Override
     public void action(Joueur j) {
+        getMonopoly().getInterface0().afficheTirage(this);
         j.setPositionCourante(getMonopoly().getCarreau(j.getPositionCourante().getNumero() + getNbcases()));
     }
     

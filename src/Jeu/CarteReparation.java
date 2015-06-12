@@ -44,7 +44,8 @@ public class CarteReparation extends Carte{
 
     @Override
     public void action(Joueur j) {
-        j.setCash(j.getCash()-j.nbMaisons() * getMontantMaison() - j.nbHotels() * getMontantHotel());
+        getMonopoly().getInterface0().afficheTirage(this);
+        j.setCash(j.getCash()-(j.nbMaisons() * getMontantMaison()) - (j.nbHotels() * getMontantHotel()));
     }
     
 }

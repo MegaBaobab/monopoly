@@ -17,17 +17,21 @@ public class Compagnie extends CarreauPropriete {
                 }
                 
             }else getMonopoly().getInterface0().pauvre();
-        }else if(getProprietaire().getCompagnies().size() == 1){
-            j.setCash(j.getCash() - 4*des);
-            getProprietaire().setCash(getProprietaire().getCash() + 4*des);
-        }else {
-            j.setCash(j.getCash() - 10*des);
-            getProprietaire().setCash(getProprietaire().getCash() + 10*des);
-        }
+        }else getMonopoly().getInterface0().payer(this, j, des);
     }
 
     
     
-    
+    public int loyerCompagnie(Joueur j, int des){
+        if(getProprietaire().getCompagnies().size() == 1){
+            j.setCash(j.getCash() - 4*des);
+            getProprietaire().setCash(getProprietaire().getCash() + 4*des);
+            return 4*des;
+        }else {
+            j.setCash(j.getCash() - 10*des);
+            getProprietaire().setCash(getProprietaire().getCash() + 10*des);
+            return 10*des;
+        }
+    }
     
 }

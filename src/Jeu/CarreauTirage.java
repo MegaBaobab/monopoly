@@ -8,7 +8,13 @@ public class CarreauTirage extends CarreauAction {
 
     @Override
     public void action(Joueur j, int des) {
-         // OMFG faut faire j'sais pas quoi avec des cartes
+         if(getNumero() == 3 || getNumero() == 18 || getNumero() == 34){
+             getMonopoly().tirerCarteCommunaute().action(j);
+         }
+         else{
+             getMonopoly().tirerCarteChance().action(j);
+         }
+         
     }
 
   

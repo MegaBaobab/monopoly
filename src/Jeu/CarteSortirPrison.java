@@ -20,7 +20,8 @@ public class CarteSortirPrison extends Carte{
 
     @Override
     public void action(Joueur j) {
-      r//  to do
+        getMonopoly().getInterface0().afficheTirage(this);
+      j.setNbCartessortiePrison(j.getNbCartessortiePrison() + 1);
     }
     
 }

@@ -10,7 +10,11 @@ public class CarreauArgent extends CarreauAction {
 
     @Override
     public void action(Joueur j, int des) {
-        j.setCash(j.getCash() - montant);
+        j.setCash(j.getCash() + montant);
+        if(getNumero()!=11){
+            getMonopoly().getInterface0().argent(montant);
+        }
+        
     }
         
         

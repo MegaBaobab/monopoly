@@ -34,19 +34,19 @@ public class CarteMouvementAbsolu extends Carte {
     @Override
     public void action(Joueur j) {
        if(getCarreau().getNumero() == 1){
-            getMonopoly().getInterface0().allerDepart(j);
+            getMonopoly().getInterface0().afficheTirage(this);
             j.setCash(j.getCash() + 200);
         }
         else if(getCarreau().getNumero() == 11){
-            getMonopoly().getInterface0().allerPrison(j);
+            getMonopoly().getInterface0().afficheTirage(this);
             getMonopoly().allerEnPrison(j);
         }
         else if(getCarreau().getNumero() == 25 && j.getPositionCourante().getNumero()>25){
-            getMonopoly().getInterface0().allerCarreau(getCarreau(),j);
+            getMonopoly().getInterface0().afficheTirage(this);
             j.setCash(j.getCash() + 200);
         }
         else {
-            getMonopoly().getInterface0().allerCarreau(getCarreau(),j);
+            getMonopoly().getInterface0().allerCarreau(getCarreau());
         }
         j.setPositionCourante(getCarreau());
     }

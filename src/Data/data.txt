@@ -14,9 +14,9 @@ C,13,Compagnie de distribution d'électricité,150
 P,14,Av. de Neuilly,violet,140,10,50,150,450,625,750,100,100
 P,15,Rue de Paradis,violet,160,12,60,180,500,700,900,100,100
 G,16,Gare de Lyon,200
-P,17,Bd Saint-Michel,orange,180,14,70,200,550,750,950,100,100
+P,17,Av. Mozart,orange,180,14,70,200,550,750,950,100,100
 CT,18,Caisse de Communauté
-P,19,Av. Mozart,orange,180,14,70,200,550,750,950,100,100
+P,19,Bd Saint-Michel,orange,180,14,70,200,550,750,950,100,100
 P,20,Place Pigalle,orange,200,16,80,220,600,800,1000,100,100
 CA,21,Parc Gratuit,0
 P,22,Bd Malesherbes,rouge,220,18,90,250,700,875,1050,150,150
@@ -38,37 +38,37 @@ CT,37,Chance
 P,38,Av. des Champs-Elysées,bleuFonce,350,35,175,500,1100,1300,1500,200,200
 CA,39,Taxe de Luxe,-100
 P,40,Rue de la Paix,bleuFonce,400,50,200,600,1400,1700,2000,200,200
-CC,SP,Vous êtes libéré de prison. Cette carte peut être concervée jusqu'à ce qu'elle soit utilisée.
-CC,MR,Reculez de 3 cases.,-3
-CC,R,Vous êtes imposés pour les réparations de voirie à raison de : 40€ par maisons et 115€ par hôtels.,40,115
-CC,A,Amende pour excès de vitesse : 15€.,-15
-CC,R,Faites des réparations dans toutes vos maisons: versez pour chaque maisons 25€ et pour chaque hotel 100€.,25,100
-CC,A,Amende pour ivresse : 20€.,-20
-CC,MA,Avancez jusqu'à la case Départ.,1
-CC,MA,Allez en prison. Avancez  tout droit en prison.Ne passez pas par la case Départ.Ne recevez pas 200€.,11
-CC,MA,Rendez-vous à l'avenue Henri-Martin. Si vous passez par la case Départ recevez 200€.,25
-CC,MA,Allez a la gare de Lyon.Si vous passez par la case Départ recevez 200€.,16
-CC,A,Payez pour frais de scolarité : 150€.,-150
-CC,A,Vous gagné le prix de mots croisés. Recevez 100€.,100
-CC,A,La banque vous verse un dividende de 50 €.,50
-CC,MA,Rendez-vous Rue de la Paix.,40
-CC,A,Votre immeuble et votre prêt rapportent. Vous devez toucher 150€. ,150
-CC,MA,Accedez au Boulevard de la Villette. Si vous passez par la case Départ recevez 200€.,2
-CCC,SP,Vous êtes libéré de prison. Cette carte peut être concervée jusqu'à ce qu'elle soit utilisée.
-CCC,A,Payez une amende de 10€.,-10
-CCC,AN,C'est votre anniversaire. Chaque joueur doit vous donner 10€. 
-CCC,A,Erreur de la banque en votre faveur. Recevez 200€.,200
-CCC,MA,Retournez à belleville.,2
-CCC,A,Payez la note du medcin: 50€.,-50
-CCC,A,Les contributions vous remboursent la somme de 20€.,20
-CCC,A,Payez à l'hôpital 100€.,-100
-CCC,A,Vous héritez: 100€.,100
-CCC,MA,Allez en prison. Avancez  tout droit en prison.Ne passez pas par la case Départ.Ne recevez pas 200€.,11
-CCC,A,Payez votre police d'assurance: 50€.,-50
-CCC,A,La vente de votre stock vous rapporte: 50€.,50
-CCC,MA,Avancez jusqu'à la case Départ.,1
-CCC,A,Recevez votre intérêt sur l'emprunt à 7%: 25€.,25
-CCC,A,Recevez votre revenue annuel: 100€.,100
-CCC,A,Vous gagné le deuxième prix de beauté: recevez 10€.,10
+CH,SP,Vous êtes libéré de prison. Cette carte peut être conservée jusqu'à ce qu'elle soit utilisée.
+CH,MR,Reculez de 3 cases.,-3
+CH,R,Vous êtes imposé pour les réparations de voirie à raison de : 40€ par maison et 115€ par hôtel.,40,115
+CH,A,Amende pour excès de vitesse : 15€.,-15
+CH,R,Faites des réparations dans toutes vos maisons: versez pour chaque maison 25€ et pour chaque hotel 100€.,25,100
+CH,A,Amende pour ivresse : 20€.,-20
+CH,MA,Avancez jusqu'à la case Départ.,1
+CH,MA,Allez en prison. Avancez  tout droit en prison.Ne passez pas par la case Départ.Ne recevez pas 200€.,11
+CH,MA,Rendez-vous à l'avenue Henri-Martin Si vous passez par la case Départ recevez 200€.,25
+CH,MA,Allez a la gare de Lyon.Si vous passez par la case Départ recevez 200€.,16
+CH,A,Payez pour frais de scolarité : 150€.,-150
+CH,A,Vous avez gagné le prix de mots croisés. Recevez 100€.,100
+CH,A,La banque vous verse un dividende de 50 €.,50
+CH,MA,Rendez-vous Rue de la Paix.,40
+CH,A,Votre immeuble et votre prêt rapportent. Vous devez toucher 150€. ,150
+CH,MA,Accedez au Boulevard de la Villette. Si vous passez par la case Départ recevez 200€.,2
+CO,SP,Vous êtes libéré de prison. Cette carte peut être conservée jusqu'à ce qu'elle soit utilisée.
+CO,A,Payez une amende de 10€.,-10
+CO,AN,C'est votre anniversaire. Chaque joueur doit vous donner 10€. 
+CO,A,Erreur de la banque en votre faveur. Recevez 200€.,200
+CO,MA,Retournez à belleville.,2
+CO,A,Payez la note du medecin: 50€.,-50
+CO,A,Les contributions vous remboursent la somme de 20€.,20
+CO,A,Payez à l'hôpital 100€.,-100
+CO,A,Vous héritez: 100€.,100
+CO,MA,Allez en prison. Avancez  tout droit en prison.Ne passez pas par la case Départ.Ne recevez pas 200€.,11
+CO,A,Payez votre police d'assurance: 50€.,-50
+CO,A,La vente de votre stock vous rapporte: 50€.,50
+CO,MA,Avancez jusqu'à la case Départ.,1
+CO,A,Recevez votre intérêt sur l'emprunt à 7%: 25€.,25
+CO,A,Recevez votre revenu annuel: 100€.,100
+CO,A,Vous gagné le deuxième prix de beauté: recevez 10€.,10
 
 

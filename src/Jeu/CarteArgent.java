@@ -34,6 +34,7 @@ public class CarteArgent extends Carte{
 
     @Override
     public void action(Joueur j) {
+        getMonopoly().getInterface0().afficheTirage(this);
         j.setCash(j.getCash()+montant);
     }
     
